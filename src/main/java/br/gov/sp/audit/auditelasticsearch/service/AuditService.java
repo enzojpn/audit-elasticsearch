@@ -2,11 +2,13 @@ package br.gov.sp.audit.auditelasticsearch.service;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import br.gov.sp.audit.auditelasticsearch.model.Audit;
@@ -14,9 +16,7 @@ import br.gov.sp.audit.auditelasticsearch.model.Audit;
 @Service
 public class AuditService {
 
-	List<Audit> listaDeAudits = new ArrayList<Audit>();
-
-	 
+ 
 	
 	public Long verificaLimiteDeConsulta(LocalDateTime inicio, LocalDateTime fim) {
 
@@ -55,5 +55,15 @@ public class AuditService {
 		ZoneId zoneId = ZoneId.systemDefault();
 		return LocalDateTime.ofInstant(instant, zoneId);
 	}
-
+//
+//	//TODO apagar este metodo apos teste
+//	@Scheduled(fixedDelay   = 1000)
+//	public void testeAgendamento() throws InterruptedException {
+//		
+//		System.out.println("Rodando -"+ ident +"- as " + LocalTime.now());
+//		Thread.sleep(7000);
+//		System.out.println("metodo -"+ ident+"- finalizado ");
+//		ident++;
+//		
+//	}
 }

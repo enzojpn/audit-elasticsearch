@@ -1,0 +1,1 @@
+INSERT INTO Pessoa (  nome) VALUES ( 'MOSES') ;

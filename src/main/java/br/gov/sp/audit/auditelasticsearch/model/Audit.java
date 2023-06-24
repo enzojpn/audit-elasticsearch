@@ -5,8 +5,11 @@ import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
+
 public class Audit {
 
+	
+	
 	private Long id;
 	private String trx;
 	
