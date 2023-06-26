@@ -16,25 +16,48 @@
 <body>
 	<form method="POST" action="/audit" class="row">
 		<div class="col-auto">
-			<label class="form-label">Audit</label>
-			<input type="text" class="form-control" name="trx">
+			<label class="form-label">Id do Usuario</label>
+			<input type="text" class="form-control" name="userId">
 		</div>
- 
 		<div class="row">
 			<div class="col-auto">
-				<label  class="form-label">Data Inicio</label>
-				<input type="datetime-local" class="form-control" name="dataInicio"   />
+				<label class="form-label">Data Inicio</label>
+				<input type="datetime-local" class="form-control" name="dataInicio" />
 				<div class="col-auto">
 					<label class="form-label">Data Fim</label>
 					<input type="datetime-local" class="form-control" name="dataFim" />
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-auto">
-					<br />
-					<button type="submit" class="btn btn-primary">Enviar</button>
-				</div>
+		</div>
+
+
+		<div class="col-auto">
+			<label class="form-label">Tipo</label>
+			<input type="text" class="form-control" name="tipo">
+		</div>
+		<div class="col-auto">
+			<label class="form-label">Transacao</label>
+			<input type="text" class="form-control" name="transacao">
+		</div>
+
+		<div class="col-auto">
+			<label class="form-label">Terminal</label>
+			<input type="text" class="form-control" name="terminal">
+		</div>
+		<div class="col-auto">
+			<label class="form-label">Tela/Fragmento</label>
+			<input type="text" class="form-control" name="tela">
+		</div>
+
+
+		<div class="row">
+			<div class="col-auto">
+				<br />
+				<button type="submit" class="btn btn-primary">Enviar</button>
 			</div>
+		</div>
+
+
 	</form>
 
 
