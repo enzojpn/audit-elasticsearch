@@ -14,9 +14,9 @@ public class Audit {
 	private String indice;
 	
 	private String userId;
-	@DateTimeFormat(iso=ISO.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
 	private Date dataInicio;
-	@DateTimeFormat(iso=ISO.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm")
 	private Date dataFim;
 	private String tipo;
 	private String transacao;

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import br.gov.sp.audit.auditelasticsearch.model.Audit;
+import br.gov.sp.audit.auditelasticsearch.model.AuditQuery;
 import br.gov.sp.audit.auditelasticsearch.model.Pessoa;
 import br.gov.sp.audit.auditelasticsearch.repository.PessoaRepository;
 import br.gov.sp.audit.auditelasticsearch.service.AuditService;
@@ -32,12 +33,7 @@ public class AuditController {
 	public String home() {
 		return "audit";
 	}
-
-	@GetMapping("/listas")
-	public  Pessoa lista() {
-		return pessoaRepository.findById(12L).get();
-	}
-
+ 
 	@GetMapping("/load")
 	public String load() {
 
