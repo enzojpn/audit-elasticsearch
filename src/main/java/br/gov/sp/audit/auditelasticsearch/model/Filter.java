@@ -4,15 +4,16 @@ import java.util.List;
 
 public class Filter {
 	
-	List<Range> ranges;
+	List<Range> range;
 
-	public List<Range> getRanges() {
-		return ranges;
+	public List<Range> getRange() {
+		return range;
 	}
 
-	public void setRanges(List<Range> ranges) {
-		this.ranges = ranges;
+	public void setRange(List<Range> range) {
+		this.range = range;
 	}
+
 	
 	
 }
