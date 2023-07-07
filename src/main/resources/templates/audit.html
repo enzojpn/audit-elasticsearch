@@ -2,51 +2,60 @@
 <html>
 
 <head>
-	<meta charset='utf-8'>
-	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
-	<title>Audit - elasticsearch</title>
-	<meta name='viewport' content='width=device-width, initial-scale=1'>
-	<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
-	<script src='main.js'></script>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/style.css">
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<title>Audit - elasticsearch</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+<script src='main.js'></script>
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+	crossorigin="anonymous">
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 	<form method="POST" action="/audit" class="row">
+
 		<div class="col-auto">
-			<label class="form-label">Id do Usuario</label>
-			<input type="text" class="form-control" name="userId">
+			<br /> <a href="/logout" class="btn btn-primary">Logout</a>
+		</div>
+		<div class="col-auto">
+
+
+			<label class="form-label">Id do Usuario</label> <input type="text"
+				class="form-control" name="userId">
 		</div>
 		<div class="row">
 			<div class="col-auto">
-				<label class="form-label">Data Inicio</label>
-				<input type="datetime-local" class="form-control" name="dataInicio" />
+				<label class="form-label">Data Inicio</label> <input
+					type="datetime-local" class="form-control" name="dataInicio" />
 				<div class="col-auto">
-					<label class="form-label">Data Fim</label>
-					<input type="datetime-local" class="form-control" name="dataFim" />
+					<label class="form-label">Data Fim</label> <input
+						type="datetime-local" class="form-control" name="dataFim" />
 				</div>
 			</div>
 		</div>
 
 
 		<div class="col-auto">
-			<label class="form-label">Tipo</label>
-			<input type="text" class="form-control" name="tipo">
+			<label class="form-label">Tipo</label> <input type="text"
+				class="form-control" name="tipo">
 		</div>
 		<div class="col-auto">
-			<label class="form-label">Transacao</label>
-			<input type="text" class="form-control" name="transacao">
+			<label class="form-label">Transacao</label> <input type="text"
+				class="form-control" name="transacao">
 		</div>
 
 		<div class="col-auto">
-			<label class="form-label">Terminal</label>
-			<input type="text" class="form-control" name="terminal">
+			<label class="form-label">Terminal</label> <input type="text"
+				class="form-control" name="terminal">
 		</div>
 		<div class="col-auto">
-			<label class="form-label">Tela/Fragmento</label>
-			<input type="text" class="form-control" name="tela">
+			<label class="form-label">Tela/Fragmento</label> <input type="text"
+				class="form-control" name="tela">
 		</div>
 
 
@@ -55,6 +64,7 @@
 				<br />
 				<button type="submit" class="btn btn-primary">Enviar</button>
 			</div>
+
 		</div>
 
 
