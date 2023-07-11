@@ -5,10 +5,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.Date;
-import java.util.Iterator;
-import java.util.List;
 
-import org.hibernate.boot.model.source.spi.JoinedSubclassEntitySource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,8 +28,12 @@ public class AuditController {
 	@GetMapping("/audit")
 	public String home() {
 		return "audit";
+	} 
+	@GetMapping("/login")
+	public String login() {
+		return "login";
 	}
- 
+   
 	@GetMapping("/load")
 	public String load() {
 
