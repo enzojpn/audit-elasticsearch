@@ -32,12 +32,7 @@ public class AuditController {
 	public String home() {
 		return "audit";
 	}
-
-	@GetMapping("/listas")
-	public  Pessoa lista() {
-		return pessoaRepository.findById(12L).get();
-	}
-
+ 
 	@GetMapping("/load")
 	public String load() {
 
