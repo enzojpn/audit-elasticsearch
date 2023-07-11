@@ -23,12 +23,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         .and()
         // Configuração de autorização
         .authorizeRequests()
-            .antMatchers("/login", "/logout" , "/audit.html").permitAll() // Permite acesso à página de login e logout
+            .antMatchers("/login", "/logout" , "/audit" , "/list" ,"/pessoa" ).permitAll() // Permite acesso à página de login e logout
             .anyRequest().authenticated() // 
 		
 		.and()
 			.formLogin()
-			.defaultSuccessUrl("/audit.html", true); 
+			.defaultSuccessUrl("/audit", true); 
 	}
 
 }
