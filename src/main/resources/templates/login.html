@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Login</title>
+<meta charset="UTF-8">
+<title>Login</title>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 <body>
-    <h1>Login</h1>
+	<div class="container">
+		<h1>Login</h1>
+		<img src="/image/logo.png" alt="Logo"
+			style="max-width: 100px; margin: 0 auto; display: block;">
+		<form th:action="@{/login}" method="post">
+			<div>
+				<label for="username">Username:</label> <input type="text"
+					id="username" name="username" required>
+			</div>
+			<div>
+				<label for="password">Password:</label> <input type="password"
+					id="password" name="password" required>
+			</div>
+			<div>
+				<button type="submit">Login</button>
+			</div>
+		</form>
+		<!-- Exibindo a mensagem de erro, se existir -->
+		<div th:if="${errorMessage}" style="color: red;">
+			<p th:text="${errorMessage}"></p>
+		</div>
 
-    <form th:action="@{/login}" method="post">
-        <div>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-        </div>
-        <div>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <div>
-            <button type="submit">Login</button>
-        </div>
-    </form>
+	</div>
 </body>
 </html>

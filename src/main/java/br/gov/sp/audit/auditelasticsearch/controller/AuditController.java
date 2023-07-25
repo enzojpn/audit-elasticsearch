@@ -29,11 +29,7 @@ public class AuditController {
 	public String home() {
 		return "audit";
 	} 
-	@GetMapping("/login")
-	public String login() {
-		return "login";
-	}
-   
+ 
 	@GetMapping("/load")
 	public String load() {
 
