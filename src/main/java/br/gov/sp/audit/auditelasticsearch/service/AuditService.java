@@ -16,23 +16,19 @@ import br.gov.sp.audit.auditelasticsearch.model.Audit;
 @Service
 public class AuditService {
 
- 
+	private static long quantidadeMock = 60000L; //quantidade a ser fatiado a cada busca (mock)
 	
-	public Long verificaLimiteDeConsulta(LocalDateTime inicio, LocalDateTime fim) {
-
-		LocalDateTime dataIni = inicio;
-		LocalDateTime dataFim = fim;
-
-		Long quantidadeLinhas = consultarLinhas(dataIni, dataFim);
+	public long verificaLimiteDeConsulta(LocalDateTime dataIni, LocalDateTime dataFim) {
+ 
+		long quantidadeLinhas = consultarLinhas(dataIni, dataFim); //mock para consulta de linhas
 	 
 		if (quantidadeLinhas > 10000) {
 			
-			 LocalDateTime meio = dataIni.plusSeconds(dataIni.until(dataFim, java.time.temporal.ChronoUnit.SECONDS) / 2);
+			 LocalDateTime dataMediana = encontraDataMediana(dataIni, dataFim);
 
-			 System.out.println(meio + "  <<< << <<MEIO");
 			 
-			 Long quantidadeLinhasMetade1 = verificaLimiteDeConsulta(dataIni, meio);
-			 Long quantidadeLinhasMetade2 = verificaLimiteDeConsulta(meio, dataFim);
+			 long quantidadeLinhasMetade1 = verificaLimiteDeConsulta(dataIni, dataMediana);
+			 long quantidadeLinhasMetade2 = verificaLimiteDeConsulta(dataMediana, dataFim);
 
 	           quantidadeLinhas = quantidadeLinhasMetade1 + quantidadeLinhasMetade2;
 		 
@@ -43,11 +39,15 @@ public class AuditService {
 		return quantidadeLinhas;
 	}
 
-	private static Long consultarLinhas(LocalDateTime inicio, LocalDateTime fim) {
+	private LocalDateTime encontraDataMediana(LocalDateTime dataIni, LocalDateTime dataFim) {
+		LocalDateTime meio = dataIni.plusSeconds(dataIni.until(dataFim, java.time.temporal.ChronoUnit.SECONDS) / 2);
+		return meio;
+	}
 
-		int quantidadeLinhas =    (int) (Math.random() * 20000);
-		System.out.println("quantidade de linhas>>" + quantidadeLinhas);
-		return (long) quantidadeLinhas;
+	public long consultarLinhas(LocalDateTime inicio, LocalDateTime fim) {
+		quantidadeMock /= 2;
+		return quantidadeMock;
+		
 	}
 
 	public static LocalDateTime convertDateToLocalDateTime(Date date) {
