@@ -7,6 +7,7 @@ import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Stack;
 
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -15,15 +16,36 @@ import br.gov.sp.audit.auditelasticsearch.model.Audit;
 
 @Service
 public class AuditService {
-
-	private static long quantidadeMock = 60000L; //quantidade a ser fatiado a cada busca (mock)
+ 
+	
+	private static Stack<Long> pilha = new Stack<Long>();
+	
+	public AuditService() {
+		pilha.push(908L);
+		pilha.push(907L);
+		pilha.push(906L);
+		pilha.push(905L);
+		pilha.push(904L);
+		pilha.push(903L);
+		pilha.push(902L);
+		pilha.push(901L);
+		pilha.push(18040L);
+		pilha.push(18030L);
+		pilha.push(18020L);
+		pilha.push(18010L);
+		pilha.push(32020L);
+		pilha.push(33910L);
+		pilha.push(67000L);
+		
+	}
+	
 	
 	public long verificaLimiteDeConsulta(LocalDateTime dataIni, LocalDateTime dataFim) {
  
 		long quantidadeLinhas = consultarLinhas(dataIni, dataFim); //mock para consulta de linhas
 	 
 		if (quantidadeLinhas > 10000) {
-			
+			System.out.println("quantidades" + quantidadeLinhas);
 			 LocalDateTime dataMediana = encontraDataMediana(dataIni, dataFim);
 
 			 
@@ -33,7 +55,8 @@ public class AuditService {
 	           quantidadeLinhas = quantidadeLinhasMetade1 + quantidadeLinhasMetade2;
 		 
 		} else {
-			System.out.println("Limite OK!!!");
+			System.out.println("Limite OK!!!" + quantidadeLinhas);
+			
 		 
 		}
 		return quantidadeLinhas;
@@ -45,8 +68,9 @@ public class AuditService {
 	}
 
 	public long consultarLinhas(LocalDateTime inicio, LocalDateTime fim) {
-		quantidadeMock /= 2;
-		return quantidadeMock;
+		 
+		 //mock
+		return pilha.pop();
 		
 	}
 
